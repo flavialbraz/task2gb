@@ -1,0 +1,224 @@
+:root {
+    --background: #0E091B; 
+    --maincolor: #35228B;
+    --gradientb: linear-gradient(180deg, #35228B 17.74%, #311363 100%);
+    --gradinet: linear-gradient(180deg, #8E75FF 0%, #110350 100%);;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+ body {
+    font: 16px 'Poppins', sans-serif;
+    color: #fff;
+    background: var(--background);
+}
+ 
+a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1040px;
+    margin: auto;
+    height: 45vw;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form-list, .list {
+    height: 25vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1.01;
+}
+
+.form-list:before {
+    position: absolute;
+    content: "";
+    background: var(--gradinet);
+    filter: blur(60px);
+    width: 25rem;
+    height: 35rem;
+    border-radius: 100%;
+    left: -20rem;
+}
+
+.form-list form, .form-list p {
+    z-index: 111111111;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.form-list input {
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin-bottom: 1.6rem;
+    padding: 1rem;
+    outline: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgb(255 255 255 / 22%);
+    backdrop-filter: blur(150px);
+    border-radius: 10px;
+}
+ 
+
+.form-list h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0px;
+    text-align: left;
+    z-index: 111111111;
+    position: relative;
+    width: 100%;
+    margin-bottom: -15px;
+}
+
+.form-list p {
+    font-weight: 300;
+    display: block;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+
+.form-list form button {
+    width: 30%;
+    padding: .80rem;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    background: var(--gradientb);
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+.form-list form button:hover {
+    filter: brightness(1.4);
+
+}
+
+input[type=text], input[type=tel], .form-list input::placeholder {
+    color: #fff;
+    font-family: Poppins;
+}
+
+ 
+.list td {
+    width: 100%;
+    background: url(images/person.svg) var(--maincolor) no-repeat 18px 20px;
+    border-radius: 10px;
+    padding: .50rem 1.5rem 0.8rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.list tbody, .list tr {
+    width: 100%;
+    display: block;
+}
+
+.list td > h3, .list td > h4 {
+    margin: 0;
+}
+
+.item-contact {
+    flex: 2;
+}
+
+  
+.item-contact h3, .item-contact h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    margin: 0px;
+    margin-bottom: -5px;
+}
+
+.item-contact h4 {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+.list td > a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url(images/delet.svg) #27176F no-repeat 6px 4px;
+    font-size: 0px;
+    background-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.list td > a:hover {
+    background: url(images/delet.svg) #5c40df no-repeat 6px 4px;
+    background-size: 23px;
+}
+
+.form-list:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 56px;
+    background: #ffffff17;
+}
+
+.list {
+    flex: .7;
+    /* width: 90%; */
+}
+
+.form-list input:focus {
+    background: #ffffff52;
+    filter: blur(0.3px);
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 800px) { 
+    main, .form-list, .list {
+        display: block;
+        height: auto;
+        width: 93%;
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 4rem;
+        margin-top: 6rem;
+    }
+    
+    
+    .form-list:after {
+        display: none;
+    }
+    
+    .form-list h1 {
+        font-size: 2.53rem;
+    }
+}
