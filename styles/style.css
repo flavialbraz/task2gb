@@ -127,7 +127,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
  
 .list td {
     width: 100%;
-    background: url(images/person.svg) var(--maincolor) no-repeat 18px 20px;
+    background: url(/images/person.svg) var(--maincolor) no-repeat 18px 20px;
     border-radius: 10px;
     padding: .50rem 1.5rem 0.8rem 3.5rem;
     display: flex;
@@ -169,7 +169,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
     display: block;
     width: 35px;
     height: 35px;
-    background: url(images/delet.svg) #27176F no-repeat 6px 4px;
+    background: url(/images/delet.svg) #27176F no-repeat 6px 4px;
     font-size: 0px;
     background-size: 22px;
     border-radius: 8px;
@@ -178,7 +178,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
 
 
 .list td > a:hover {
-    background: url(./images/delet.svg) #5c40df no-repeat 6px 4px;
+    background: url(/images/delet.svg) #5c40df no-repeat 6px 4px;
     background-size: 23px;
 }
 
