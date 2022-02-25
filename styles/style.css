@@ -223,4 +223,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
     .form-list h1 {
         font-size: 2.53rem;
     }
+    .form-list form button {
+    width: 40%;
+}
 }
