@@ -127,7 +127,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
  
 .list td {
     width: 100%;
-    background: url('./images/person.svg') var(--maincolor) no-repeat 18px 20px;
+    background: url('../images/person.svg') var(--maincolor) no-repeat 18px 20px;
     border-radius: 10px;
     padding: .50rem 1.5rem 0.8rem 3.5rem;
     display: flex;
