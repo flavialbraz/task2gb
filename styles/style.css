@@ -178,7 +178,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
 
 
 .list td > a:hover {
-    background: url(images/delet.svg) #5c40df no-repeat 6px 4px;
+    background: url(./images/delet.svg) #5c40df no-repeat 6px 4px;
     background-size: 23px;
 }
 
