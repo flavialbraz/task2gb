@@ -193,7 +193,6 @@ input[type=text], input[type=tel], .form-list input::placeholder {
 
 .list {
     flex: .7;
-    /* width: 90%; */
 }
 
 .form-list input:focus {
@@ -213,6 +212,9 @@ input[type=text], input[type=tel], .form-list input::placeholder {
         margin-top: 6rem;
     }
     
+    .form-list p {
+    margin-top: 1rem;
+    }
     
     .form-list:after {
         display: none;
