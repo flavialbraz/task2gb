@@ -41,7 +41,7 @@ main {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    flex: 1.01;
+    width: 45%;
 }
 
 .form-list:before {
@@ -125,47 +125,44 @@ input[type=text], input[type=tel], .form-list input::placeholder {
 }
 
  
-.list td {
+.list li {
     width: 100%;
     background: url('../images/person.svg') var(--maincolor) no-repeat 18px 20px;
     border-radius: 10px;
-    padding: .50rem 1.5rem 0.8rem 3.5rem;
+    padding: .50rem 1.5rem 1.4rem 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.list tbody, .list tr {
+.list li, ul {
     width: 100%;
     display: block;
 }
 
-.list td > h3, .list td > h4 {
-    margin: 0;
+.list li > h3, .list li > h4 {
+    width: 90%;
 }
 
-.item-contact {
-    flex: 2;
-}
-
-  
-.item-contact h3, .item-contact h4 {
+ 
+ 
+.list li > h3, .list li > h4 {
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.2rem;
     letter-spacing: -0.03em;
     margin: 0px;
     margin-bottom: -5px;
 }
 
-.item-contact h4 {
-    font-size: 15px;
+.list li > h4 {
+    font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0px;
 }
 
-.list td > a {
+.list li > a {
     display: block;
     width: 35px;
     height: 35px;
@@ -177,7 +174,7 @@ input[type=text], input[type=tel], .form-list input::placeholder {
 }
 
 
-.list td > a:hover {
+.list li > a:hover {
     background: url('../images/delet.svg') #5c40df no-repeat 6px 4px;
     background-size: 23px;
 }
@@ -187,13 +184,10 @@ input[type=text], input[type=tel], .form-list input::placeholder {
     width: 1px;
     height: 100%;
     position: absolute;
-    right: 56px;
+    right: -50px;
     background: #ffffff17;
 }
-
-.list {
-    flex: .7;
-}
+ 
 
 .form-list input:focus {
     background: #ffffff52;
