@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +16,18 @@
         <section class="form-list">  
                 <h1>Lista <strong>telefônica</strong>  </h1>
                 <p>Minha agenda de contatos</p>
-            <form onsubmit="event.preventDefault();">  
+            <form action="" id="formSave">  
                 <input type="text" name="name" id="name" placeholder="Nome do contato" required>
-                <input type="tel" name="tel" id="tel" placeholder=" (00) 9900 - 0099" required>
-                <button type="submit" onclick="formSubmit();"> Salvar contato </button>
+                <input type="tel" name="tel" id="tel" placeholder=" (00) 9900 - 0099" required >
+                <button type="submit"> Salvar contato </button>
             </form>
+            <div class="existe" id="alreadyexists"> O contato já foi cadastrado </div>
         </section>                  
     
-        <table class="list" id="contactsList">  
-                
-                <tbody>    </tbody>
-        </table>
+        <div class="list">  
+                <ul id="contactsList">
+                </ul>
+        </div>
  
 </main>
     

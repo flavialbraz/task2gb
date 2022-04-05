@@ -1,49 +1,83 @@
-let inputName = document.getElementById("name");
-let inputTel = document.getElementById("tel");
-let contatsList = document.getElementById("contactsList");
+const contatsList = document.getElementById("contactsList");
+const form = document.getElementById("formSave");
+const currentContact = JSON.parse(localStorage.getItem("Contacts")) || []  
  
-function formSubmit() {
-    if (!inputName.value || !inputTel.value) {
-        return false;
-    }
-
-    if (formData = inputData()  ) {
-    insertNew(formData); 
-    return true;
-
-    }
-} 
-
-let formData = [];
-
-function inputData() {
-    formData["name"] = inputName.value;
-    formData["tel"] = inputTel.value;
+currentContact.forEach( (element) => {    
+  createContact(element)
+})
+ 
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
   
-    let dbContacts = { name: inputName.value, tel: inputTel.value } 
+    const name = event.target.elements['name']
+    const tel = event.target.elements['tel']
 
-    formData.push(dbContacts);
+    const exist = currentContact.find( element => element.name === name.value )  
 
-    window.localStorage.setItem("Contatos", JSON.stringify(formData));
-    document.querySelector('form').reset();
+    const ObjContact = {
+      "name": name.value,
+      "tel": tel.value
+   }
 
-    return formData;
-}
 
-function insertNew(data) {
-    let table = contatsList.getElementsByTagName('tbody')[0];
-    let newRow = table.insertRow(table.length);
-   cell1 = newRow.insertCell(0);
-    cell1.innerHTML = 
-    "<div class='item-contact'> <h3>" + data.name + "</h3>" + "<h4>" + data.tel + 
-    "</h3>" + "</div>" + "<a onClick='deleteItem(this)'>Delete</a>";
-}
+   if ( exist ) {
+    ObjContact.id = exist.id  
+    msgExists()
+    currentContact[itens.findIndex(element => element.id === exist.id)] = ObjContact
 
-function deleteItem(del) {
-    let row = del.parentElement.parentElement;
-    contatsList.deleteRow(row.rowIndex);
+   } else {
+    
+    ObjContact.id = currentContact[currentContact.length -1] ? (currentContact[currentContact.length-1]).id + 1 : 0;
+    
+    createContact(ObjContact)
+    currentContact.push(ObjContact)
+  }
+
+  localStorage.setItem("Contacts", JSON.stringify(currentContact))
+    form.reset()
+})
+
+function createContact (item) { 
+  const newItem = document.createElement('li')
+  const nameItem = document.createElement('h3')
+  const telItem = document.createElement('h4')
+  
+  nameItem.innerHTML = item.name
+  newItem.appendChild(nameItem)
+ 
+  telItem.innerHTML = item.tel
+  newItem.appendChild(telItem)
+
+  newItem.appendChild(botaoDeleta(item.id))
+
+  contatsList.appendChild(newItem) 
+
 }
  
-function closeX () {
-    mesgError.classList.remove("active");
+
+
+ function msgExists () {
+  const errormsg =  document.getElementById("alreadyexists")
+  errormsg.classList.add('active')
+ 
+  setTimeout(function(){
+    errormsg.classList.remove('active') 
+    }, 2400);
+
+ }
+
+ function botaoDeleta(id) {
+    const elementBtn = document.createElement("button")
+    elementBtn.innerText = "X"
+
+    elementBtn.addEventListener("click", function() {
+        deleteElement(this.parentNode, id)
+    })
+    return elementBtn
+}
+ 
+ function deleteElement(tag, id) {
+  tag.remove()
+  currentContact.splice(currentContact.findIndex(element => element.id === id), 1)
+  localStorage.setItem("Contacts", JSON.stringify(currentContact))
 }
