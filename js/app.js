@@ -51,10 +51,8 @@ function createContact (item) {
   newItem.appendChild(botaoDeleta(item.id))
 
   contatsList.appendChild(newItem) 
-
 }
  
-
 
  function msgExists () {
   const errormsg =  document.getElementById("alreadyexists")
