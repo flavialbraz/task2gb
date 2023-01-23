@@ -1,5 +1,4 @@
 # 📲 Lista telefonica com Javascript/LocalStorage 
-Com a lista telefônica é possível adicionar e deletar contatos. Os dados/contatos são salvos no localstorage do navegador. 
 
 ![projeto2](https://user-images.githubusercontent.com/78583429/213952425-36481917-b5e1-4447-801d-c8f5b13e8650.png)
 
